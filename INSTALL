@@ -1,0 +1,17 @@
+evjs requires the following build tools:
+
+ * autotools
+ * make
+ * gcc
+
+In addition, you must have the following libraries installed:
+
+ * ncurses
+ * sqlite3
+
+You can build evjs by executing the following:
+
+    $ ./bootstrap
+    $ ./configure --prefix=/usr
+    $ make
+    & make install

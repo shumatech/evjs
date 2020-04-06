@@ -1,0 +1,1 @@
+ACTION=="add", KERNEL=="event*", SUBSYSTEM=="input", RUN+="/usr/bin/evjscal -c '%E{DEVNAME}'"
