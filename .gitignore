@@ -8,6 +8,7 @@ depcomp
 *.sublime-project
 *.sublime-workspace
 .clang_complete
+compile_flags.txt
 install-sh
 missing
 *.in
