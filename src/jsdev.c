@@ -50,8 +50,9 @@ struct jsdev
 
 bool jsaxis_cal_set(jsdev_t *dev, jsidx_t index, const jscal_t *cal)
 {
-    ASSERT(index < dev->axis_num);
+    ASSERT(index < AXIS_CNT);
     uint8_t id = dev->axis_map[index];
+    ASSERT(id < dev->axis_num);
 
     if (cal->min >= cal->max || cal->center_min > cal->center_max ||
         cal->center_min <= cal->min || cal->center_max >= cal->max)
