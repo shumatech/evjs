@@ -391,7 +391,7 @@ bool view_confirm(view_t *view, const char *prompt)
     char ch = 0;
 
     wbkgdset(w, A_REVERSE);
-    if (mvwprintw(w, STATUS_Y, STATUS_X, prompt) == OK)
+    if (mvwprintw(w, STATUS_Y, STATUS_X, "%s", prompt) == OK)
         wclrtoeol(w);
     wrefresh(w);
 
