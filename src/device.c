@@ -221,7 +221,8 @@ void device_calibrate(device_t *dev)
     }
 
 #if ENABLE_JOYSTICK
-    jsaxis_cal_activate(dev->jsdev);
+    if (dev->jsdev)
+        jsaxis_cal_activate(dev->jsdev);
 #endif
 
     dev->dirty = true;
@@ -232,7 +233,8 @@ void device_free(device_t *dev)
     evdev_free(dev->evdev);
 
 #if ENABLE_JOYSTICK
-    jsdev_free(dev->jsdev);
+    if (dev->jsdev)
+        jsdev_free(dev->jsdev);
     xfree(dev->jsfile);
 #endif
 
